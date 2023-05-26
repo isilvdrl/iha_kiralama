@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    
+</head>
+<body>
+<center>
+    <h1>Profil Oluşturma Sayfası</h1>
+    
+    <hr/>
+    <form method=POST>
+        {% csrf_token %}
+    <table border="1">
+        <tr>
+            <tr>
+                <td>İsim</td>
+                <td><input type="text" placeholder="İsim bilgisini giriniz..." name="isim"></td>
+            </tr>
+            <tr>
+                <td>Soyisim</td>
+                <td><input type="text" placeholder="Soyisim bilgisini giriniz..." name="soyisim"></td>
+            </tr>
+            <tr>
+                <td>Mail</td>
+                <td><input type="text" placeholder="Mail bilgisini giriniz..." name="mail"></td>
+            </tr>
+            <tr>
+                <td>Telefon</td>
+                <td><input type="text" placeholder="Telefon bilgisini giriniz..." name="telefon"></td>
+            </tr>
+            <tr>
+                <td>Kullanıcı Adı</td>
+                <td><input type="text" placeholder="Kullanıcı Adınızı Giriniz..." name="kullanici_adi"></td>
+            </tr>
+            <tr>
+                <td>Şifre</td>
+                <td><input type="password" placeholder="Şifrenizi Giriniz..." name="sifre"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Kaydet"></td>
+                <td>
+                    {% if messages %}
+                    {% for mess in messages%}
+                    <b style="color:green;">{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+            
+        </tr>
+    </table>
+    <a href="{% url 'showIha'%}"> Ana Sayfa </a>
+</form>
+</center>
+
+</body>
+</html>
+
+
+

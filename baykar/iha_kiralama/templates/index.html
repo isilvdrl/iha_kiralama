@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+   
+</head>
+<body>
+<center>
+    <h3>İHA Listesi</h3>
+    <hr/>
+    
+    <table border="1">
+        <tr>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Ağırlık</th>
+            <th>Kategori</th>
+            
+        </tr>
+        {% for iha in data %}
+        <tr>
+            <td>{{ iha.marka }}</td>
+            <td>{{ iha.model }}</td>
+            <td>{{ iha.agirlik }}</td>
+            <td>{{ iha.kategori }}</td>
+            <td><a href="Edit/{{iha.id}}"> Düzenle </a></td>
+            <td><a href="Delete/{{iha.id}}" onclick="return confirm('Silmek İstediğinizden Emin Misiniz?')"> Sil</a> </td>
+        </tr>
+        {% empty %}
+        <p>Henüz herhangi bir IHA bulunmamaktadır.</p>
+        {% endfor %}
+
+    </table>
+    <a href="{% url 'insertIha'%}"> İHA Kayıt Sayfası </a> <hr/>
+    <a href="{% url 'registerIha'%}">Kayıt Ol</a>
+    <a href="{% url 'loginView'%}">Giriş Yap</a>
+</center>
+
+</body>
+</html>

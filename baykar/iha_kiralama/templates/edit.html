@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>İHA Listesi</title>
+</head>
+<body>
+<center>
+    <h1>CRUD Operation With PostgreSQL</h1>
+    <h3> İHA BİLGİLERİNİ DÜZENLE </h3>
+    <hr/>
+    <form method ="POST" action="/Update/{{IHA.id}}">
+        {%csrf_token%}
+   
+    <table border="1">
+        <tr>
+           
+            <tr>
+                <td>Marka</td>
+                <td><input type="text" name="marka" value="{{IHA.marka}}"></td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td><input type="text" name="model" value="{{IHA.model}}"></td>
+            </tr>
+            <tr>
+                <td>Ağırlık</td>
+                <td><input type="text" name="agirlik" value="{{IHA.agirlik}}"></td>
+            </tr>
+            <tr>
+                <td>Kategori</td>
+                <td><input type="text" name="kategori" value="{{IHA.kategori}}" readonly ></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Update"></td>
+                <td>
+                    {% if messages %}
+                    {% for mess in messages%}
+                    <b style="color:green;">{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+        </tr>
+
+        
+    </table>
+    <a href="{% url 'showIha' %}"> Ana Sayfa </a>
+</form>
+</center>
+
+</body>
+</html>

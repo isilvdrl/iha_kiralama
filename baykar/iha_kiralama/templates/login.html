@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" action="{% url 'loginView' %}">
+
+      {% csrf_token %}
+      <tr>
+        <td>Kullanıcı Adı</td>
+        <td><input type="text" placeholder="Kullanıcı Adınızı Giriniz..." name="kullanici_adi"></td>
+      </tr>
+      <tr>
+        <td>Şifre</td>
+        <td><input type="password" placeholder="Şifrenizi Giriniz..." name="sifre"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Login"></td>
+      </tr>
+    </form>
+</body>
+</html>
